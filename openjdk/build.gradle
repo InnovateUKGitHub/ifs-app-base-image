@@ -1,7 +1,4 @@
 apply from: rootProject.file("openshift-build.gradle")
-[stop, removeContainer, createContainer, deploy, wait].each { task ->
-    task.enabled = false
-}
 
 buildscript {
     repositories { jcenter() }

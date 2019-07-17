@@ -4,7 +4,3 @@ buildDocker.dependsOn ":openjdk:buildDocker"
 buildscript {
     repositories { jcenter() }
 }
-
-[stop, removeContainer, createContainer, deploy, wait].each { task ->
-    task.enabled = false
-}
