@@ -1,0 +1,10 @@
+apply from: rootProject.file("openshift-build.gradle")
+buildDocker.dependsOn ":openjdk:buildDocker"
+
+buildscript {
+    repositories { jcenter() }
+}
+
+[stop, removeContainer, createContainer, deploy, wait].each { task ->
+    task.enabled = false
+}
