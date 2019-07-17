@@ -1,3 +1,3 @@
 To build images
 
-    ./gradlew clean build deploy wait
+    ./gradlew clean buildDocker
