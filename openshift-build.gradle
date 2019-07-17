@@ -33,3 +33,9 @@ task buildDocker(type: DockerBuildImage) {
         "docker images".execute().text.contains("$image ")
     }
 }
+
+task pushDockerImages(type: Exec, dependsOn: buildDocker) {
+    executable = 'push-images.sh'
+    args = [project.properties['NEXUS_USERNAME'], project.properties['NEXUS_PASSWORD'], project.properties['NEXUS_URL']]
+
+}
