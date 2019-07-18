@@ -9,9 +9,9 @@ NEXUS_REGISTRY=$3
 docker login -u ${NEXUS_USERNAME} -p ${NEXUS_PASSWORD} ${NEXUS_REGISTRY}
 
 echo "Pushing app base image"
-docker push ${NEXUS_REGISTRY}/innovateuk/app-base-image:latest
+docker push innovateuk/app-base-image:latest
 
 echo "Pushing openjdk image"
-docker push ${NEXUS_REGISTRY}/innovateuk/openjdk:latest
+docker push innovateuk/openjdk:latest
 
 docker logout ${NEXUS_REGISTRY}
