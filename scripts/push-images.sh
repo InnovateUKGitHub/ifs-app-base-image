@@ -13,3 +13,5 @@ docker push ${NEXUS_REGISTRY}/innovateuk/app-base-image:latest
 
 echo "Pushing openjdk image"
 docker push ${NEXUS_REGISTRY}/innovateuk/openjdk:latest
+
+docker logout ${NEXUS_REGISTRY}
