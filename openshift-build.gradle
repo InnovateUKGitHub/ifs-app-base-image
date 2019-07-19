@@ -37,5 +37,5 @@ task buildDocker(type: DockerBuildImage) {
 task pushDockerImages(type: Exec, dependsOn: buildDocker) {
     workingDir = project.rootDir
     executable = new File(workingDir, 'scripts/push-images.sh')
-    args = [project.properties['nexusUsername'], project.properties['nexusPassword'], project.properties['nexusRegistry']]
+    args = [project.properties['nexusUsername'], project.properties['nexusPassword'], project.properties['nexusRegistry'], project.version]
 }
