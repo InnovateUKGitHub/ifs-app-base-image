@@ -15,6 +15,7 @@ buildscript {
 
 task buildDocker(type: DockerBuildImage) {
 
+    noCache = true
     tag = "innovateuk/${project.name.replaceAll(/ifs-/, "")}"
     inputDir = project.projectDir
 
