@@ -37,7 +37,7 @@ wrapper {
 task buildBaseImages() {
     dependsOn ":openjdk:buildDocker"
     dependsOn ":aws-cli:buildDocker"
-    dependsOn ":app-base-image:buildDocker"
+    dependsOn ":ifs-base-image:buildDocker"
     dependsOn ":cache-provider:buildDocker"
     dependsOn ":ifs-mail-sink:buildDocker"
     dependsOn ":ifs-mysql:buildDocker"

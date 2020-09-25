@@ -1,4 +1,4 @@
-include 'app-base-image'
+include 'ifs-base-image'
 include 'aws-cli'
 include 'cache-provider'
 include 'ifs-mail-sink'
