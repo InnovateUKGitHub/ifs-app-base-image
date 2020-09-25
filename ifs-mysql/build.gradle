@@ -1,0 +1,8 @@
+apply from: rootProject.file("gradle-support/openshift-build.gradle")
+
+buildscript {
+    repositories { jcenter() }
+}
+
+buildDocker.inputDir = project.file("$project.projectDir/docker")
+buildDocker.tag = "innovateuk/ifs-mysql:" + sqlVersion
