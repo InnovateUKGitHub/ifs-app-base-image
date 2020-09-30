@@ -1,3 +1,3 @@
-To build images
+To build images locally
 
-    ./gradlew buildDocker
+    ./gradlew buildBaseImages

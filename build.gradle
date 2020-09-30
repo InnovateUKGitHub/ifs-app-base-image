@@ -1,16 +1,45 @@
+apply plugin: com.github.benmanes.gradle.versions.VersionsPlugin
 
-plugins {
-    id 'java'
+apply from: "gradle-support/dependency-check.gradle"
+apply from: "gradle-support/openshift-build.gradle"
+
+buildscript {
+
+    repositories {
+        maven { url "http://dl.bintray.com/robfletcher/gradle-plugins" }
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+
+    dependencies {
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.20.0'
+    }
 }
 
-apply from: "release.gradle"
 
-version '1.0-SNAPSHOT'
+dependencyUpdates.resolutionStrategy = {
+    componentSelection { rules ->
+        rules.all { ComponentSelection selection ->
+            // filters out any version numbers ending in rejected. e.g 1.0.0-rc.
+            boolean rejected = ['alpha', 'beta', 'rc', 'cr', 'm', 'pr1', 'Beta'].any { qualifier ->
+                selection.candidate.version ==~ /(?i).*[.-]${qualifier}[.\d-]*/
+            }
+            if (rejected) {
+                selection.reject('Release candidate')
+            }
+        }
+    }
+}
 
-sourceCompatibility = 1.8
+wrapper {
+    gradleVersion = '5.5'
+}
 
-version '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
+task buildBaseImages() {
+    dependsOn ":openjdk:buildDocker"
+    dependsOn ":aws-cli:buildDocker"
+    dependsOn ":ifs-base-image:buildDocker"
+    dependsOn ":cache-provider:buildDocker"
+    dependsOn ":ifs-mail-sink:buildDocker"
+    dependsOn ":ifs-mysql:buildDocker"
+    dependsOn ":ifs-mysql-client:buildDocker"
 }

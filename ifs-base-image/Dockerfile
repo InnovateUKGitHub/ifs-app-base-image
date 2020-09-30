@@ -1,5 +1,6 @@
 FROM innovateuk/openjdk
 
+
 RUN mkdir -p /opt/app
 RUN chgrp -R 0 /opt/app && chmod -R g=u /opt/app
 
