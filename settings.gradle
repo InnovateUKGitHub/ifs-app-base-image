@@ -4,5 +4,6 @@ include 'cache-provider'
 include 'ifs-mail-sink'
 include 'ifs-mysql'
 include 'ifs-mysql-client'
+include 'ifs-production-issues-mysql-client'
 include 'openjdk'
 
