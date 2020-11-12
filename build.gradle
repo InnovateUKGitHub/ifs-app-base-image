@@ -42,4 +42,6 @@ task buildBaseImages() {
     dependsOn ":ifs-mail-sink:buildDocker"
     dependsOn ":ifs-mysql:buildDocker"
     dependsOn ":ifs-mysql-client:buildDocker"
+    dependsOn ":ifs-production-issues-mysql-client:buildDocker"
+    dependsOn ":ifs-flowable-ui:buildDocker"
 }
