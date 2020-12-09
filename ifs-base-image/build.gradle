@@ -5,3 +5,4 @@ buildscript {
 }
 
 buildDocker.dependsOn ":openjdk:buildDocker"
+buildDocker.tag = "docker-ifs.devops.innovateuk.org/releases/ifs-base-image"
