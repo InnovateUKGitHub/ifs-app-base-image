@@ -5,4 +5,4 @@ buildscript {
 }
 
 buildDocker.inputDir = project.file("$project.projectDir/docker")
-buildDocker.tag = "innovateuk/ifs-mysql:" + sqlVersion
+buildDocker.tag = "docker-ifs.devops.innovateuk.org/releases/ifs-mysql:" + sqlVersion

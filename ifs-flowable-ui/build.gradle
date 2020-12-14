@@ -4,4 +4,4 @@ buildscript {
     repositories { jcenter() }
 }
 
-buildDocker.tag = "innovateuk/ifs-flowable-ui:" + flowableuiVersion
+buildDocker.tag = "docker-ifs.devops.innovateuk.org/releases/ifs-flowable-ui:" + flowableuiVersion

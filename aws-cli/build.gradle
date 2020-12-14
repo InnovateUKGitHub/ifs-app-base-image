@@ -3,5 +3,4 @@ apply from: rootProject.file("gradle-support/openshift-build.gradle")
 buildscript {
     repositories { jcenter() }
 }
-
-buildDocker.tag = "innovateuk/aws-cli:" + awsCliVersion
+buildDocker.tag = "docker-ifs.devops.innovateuk.org/releases/aws-cli:" + awsCliVersion
