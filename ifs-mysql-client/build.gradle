@@ -4,4 +4,4 @@ buildscript {
     repositories { jcenter() }
 }
 
-buildDocker.tag = "innovateuk/ifs-mysql-client:" + sqlVersion
+buildDocker.tag = "docker-ifs.devops.innovateuk.org/releases/ifs-mysql-client:" + sqlVersion

@@ -1,4 +1,4 @@
-FROM innovateuk/openjdk
+FROM docker-ifs.devops.innovateuk.org/releases/openjdk
 
 
 RUN mkdir -p /opt/app

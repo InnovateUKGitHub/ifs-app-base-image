@@ -4,4 +4,4 @@ buildscript {
     repositories { jcenter() }
 }
 
-buildDocker.tag = "innovateuk/mail-sink:" + mailSinkVersion
+buildDocker.tag = "docker-ifs.devops.innovateuk.org/releases/mail-sink:" + mailSinkVersion
