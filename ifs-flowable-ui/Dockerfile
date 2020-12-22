@@ -1,11 +1,10 @@
 FROM flowable/flowable-ui:6.6.0
 
-USER root
-RUN apk add --no-cache ttf-dejavu su-exec && rm -rf /var/cache/apk/*
+RUN chown -R flowable:flowable /app
 
-COPY mysql-connector-java-8.0.19.jar /app/WEB-INF/lib/
+USER flowable
 
-RUN adduser -S testuser -G root
+COPY flowable-entrypoint.sh /
+COPY mysql-connector-java-8.0.19.jar /app/WEB-INF/lib
+COPY flowable-default.properties /app/WEB-INF/classes
 
-ADD wait-for-something.sh .
-RUN chmod +x wait-for-something.sh
